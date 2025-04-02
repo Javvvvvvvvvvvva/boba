@@ -321,7 +321,6 @@ header {
 @media (max-width: 600px) {
   #orderModal {
     width: 75%;
-    height: 50%;
     font-size: 0.9rem;
     padding: 1rem;
   }
