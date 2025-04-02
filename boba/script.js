@@ -1,13 +1,33 @@
-// Show back to top button
+import emailjs from '@emailjs/browser';
+
+// ✅ Import images using Vite-compatible URLs
+const bobaImg = new URL('./boba.png', import.meta.url).href;
+const bobaHover = new URL('./boba1.png', import.meta.url).href;
+const passionImg = new URL('./passion.png', import.meta.url).href;
+const passionHover = new URL('./passion1.png', import.meta.url).href;
+
+// 🌟 DOM elements
 const backToTopBtn = document.getElementById('backToTop');
+const loadingScreen = document.getElementById('loading-screen');
+const loadingText = document.querySelector('.loading-text');
+const orderBtn = document.getElementById('orderNow');
+const orderModal = document.getElementById('orderModal');
+const closeModal = document.getElementById('closeModal');
+const orderForm = document.querySelector('#orderModal form');
+const popup = document.getElementById('pricePopup');
+const boba = document.getElementById('bobaMilk');
+const passion = document.getElementById('passionTea');
+
+// ✅ Set default image sources
+boba.src = bobaImg;
+passion.src = passionImg;
+
+// 🧋 Scroll - back to top button
 window.addEventListener('scroll', () => {
   backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
 
-// Loading screen
-const loadingScreen = document.getElementById('loading-screen');
-const loadingText = document.querySelector('.loading-text');
-
+// 🧋 Loading screen fade out
 window.addEventListener('load', () => {
   setTimeout(() => {
     loadingScreen.classList.add('fade-out');
@@ -15,11 +35,7 @@ window.addEventListener('load', () => {
   }, 500);
 });
 
-// Modal open/close
-const orderBtn = document.getElementById('orderNow');
-const orderModal = document.getElementById('orderModal');
-const closeModal = document.getElementById('closeModal');
-
+// 🧋 Modal control
 orderBtn.addEventListener('click', () => {
   orderModal.classList.add('show');
 });
@@ -27,18 +43,17 @@ closeModal.addEventListener('click', () => {
   orderModal.classList.remove('show');
 });
 
-// EmailJS init
+// 📧 EmailJS init
 emailjs.init("REXB9WLJ_LjDtS10W");
 
-const orderForm = document.querySelector('#orderModal form');
+// 💌 Form submission
 orderForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const drink = document.querySelector('input[name="drink"]:checked')?.value;
+  const method = document.querySelector('input[name="method"]:checked')?.value;
   const email = orderForm.email.value;
   const notes = orderForm.notes.value;
-  const method = document.querySelector('input[name="method"]:checked')?.value;
-
 
   if (!drink || !email) {
     alert("Please select a drink and enter your email 🧋💌");
@@ -71,11 +86,7 @@ orderForm.addEventListener('submit', (e) => {
   });
 });
 
-// 🧋 Price popup on hover
-const popup = document.getElementById('pricePopup');
-const boba = document.getElementById('bobaMilk');
-const passion = document.getElementById('passionTea');
-
+// 💵 Price popup
 boba.addEventListener('mouseenter', () => {
   popup.textContent = '$5 – Boba Milk with chewy pearls! 🧋';
   showPopup(boba);
@@ -100,9 +111,9 @@ function hidePopup() {
   popup.style.display = 'none';
 }
 
-// 🖼️ Hover image switch
-boba.addEventListener('mouseenter', () => boba.src = 'boba1.png');
-boba.addEventListener('mouseleave', () => boba.src = 'boba.png');
+// 🎨 Hover switch image
+boba.addEventListener('mouseenter', () => boba.src = bobaHover);
+boba.addEventListener('mouseleave', () => boba.src = bobaImg);
 
-passion.addEventListener('mouseenter', () => passion.src = 'passion1.png');
-passion.addEventListener('mouseleave', () => passion.src = 'passion.png');
+passion.addEventListener('mouseenter', () => passion.src = passionHover);
+passion.addEventListener('mouseleave', () => passion.src = passionImg);
