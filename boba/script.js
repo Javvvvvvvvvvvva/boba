@@ -31,7 +31,7 @@ window.addEventListener('scroll', () => {
 window.addEventListener('load', () => {
   setTimeout(() => {
     loadingScreen.classList.add('fade-out');
-    setTimeout(() => loadingScreen.remove(), 500);
+    setTimeout(() => loadingScreen.remove(), 850);
   }, 500);
 });
 
