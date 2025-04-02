@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boba Falls🧋</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Clouds -->
+  <div class="bg-cloud cloud1"></div>
+  <div class="bg-cloud cloud2"></div>
+  <div class="bg-cloud cloud3"></div>
+  <div class="bg-cloud cloud4"></div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <div class="loading-text">🧋 Blending your boba...</div>
+  </div>
+
+  <header>Boba Falls🧋</header>
+
+  <!-- Boba Gallery -->
+  <div class="boba-gallery">
+    <div class="boba-item">
+      <img id="bobaMilk" src="boba.png" alt="Boba Milk Tea" class="boba-img" />
+      <div class="price-popup" id="bobaPrice"></div>
+    </div>
+    <div class="boba-item">
+      <img id="passionTea" src="passion.png" alt="Passionfruit Tea" class="boba-img" />
+      <div class="price-popup" id="passionPrice"></div>
+    </div>
+  </div>
+
+  <div class="price-popup" id="pricePopup">$5</div>
+
+  <div class="menu">
+    <button id="orderNow">Order Now 🧋</button>
+
+    <div id="orderModal">
+      <button id="closeModal">✖</button>
+      <form id="orderForm">
+        <h2>Place Your Order</h2>
+        <p>Select a drink and we’ll make it<br />with love 💖</p>
+
+        <label>
+          <input type="radio" name="drink" value="Boba Milk" required />
+          🧋 Boba Milk
+        </label><br />
+        <label>
+          <input type="radio" name="drink" value="Passionfruit Tea" />
+          🍑 Passionfruit Tea
+        </label><br /><br />
+        <p>📦 Pickup or Delivery?</p>
+        <label>
+          <input type="radio" name="method" value="Pickup" required />
+          🏃‍♂️ Pickup
+        </label><br />
+        <label>
+          <input type="radio" name="method" value="Delivery" />
+          🚚 Delivery
+        </label><br /><br />
+        <label>
+          📧 Your Email:<br />
+          <input type="email" name="email" required placeholder="cutie@email.com" autocomplete="off" />
+        </label><br /><br />
+
+        <label>
+          📝 Notes / Quantity:<br />
+          <textarea name="notes" placeholder="1 Boba Milk, less sugar please! 💕"></textarea>
+        </label><br /><br />
+
+        <button type="submit">Send Order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="info">
+    Delivery / Pickup: Sat–Mon, 2–7pm<br />
+    Pickup at North Hall, UW–River Falls
+  </div>
+
+  <!-- Boba bubbles -->
+  <div class="boba-bubble bubble1"></div>
+  <div class="boba-bubble bubble2"></div>
+  <div class="boba-bubble bubble3"></div>
+  <div class="boba-bubble bubble4"></div>
+  <div class="boba-bubble bubble5"></div>
+
+  <!-- Back to top -->
+  <button id="backToTop">Top ↑</button>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 2rem; font-size: 1rem; color: #6d4c41;">
+    Made with 💖 and 🧋 by boba Master
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js" type="module"></script>
+</body>
+</html>

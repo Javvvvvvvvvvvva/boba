@@ -1,0 +1,321 @@
+/* Boba Falls - style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Chewy', cursive;
+  background: linear-gradient(120deg, #fff8f1, #ffecda, #e7faff);
+  color: #4e342e;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Loading screen */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #d7ccc8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #4e342e;
+  z-index: 999;
+  transition: opacity 0.5s ease;
+}
+
+#loading-screen.fade-out {
+  opacity: 0;
+}
+
+.loading-text {
+  animation: floatUp 2s infinite ease-in-out;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  font-size: 3rem;
+  color: #6d4c41;
+  animation: fadeInDown 1s ease-out;
+}
+
+.boba-item {
+  position: relative;
+  display: inline-block;
+}
+
+#pricePopup {
+  position: absolute;
+  background: #fff8f1;
+  color: #4e342e;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: 2px dashed #d4a373;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  white-space: nowrap;
+  z-index: 10;
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 10px);
+  }
+}
+
+.menu {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.info {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #6d4c41;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Order Button */
+#orderNow {
+  display: block;
+  margin: 2rem auto;
+  background: #6d4c41;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#orderNow:hover {
+  background: #5d4037;
+}
+
+/* Order Modal */
+#orderModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: #fff6f0;
+  border: 3px dashed #ffe0b2;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  z-index: 1000;
+  display: none;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#orderModal.show {
+  display: block;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #8d6e63;
+  cursor: pointer;
+}
+
+.boba-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  max-width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.boba-img {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  max-width: 100%;
+  animation: floatWobble 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Floating boba bubbles */
+.boba-bubble {
+  position: absolute;
+  bottom: -50px;
+  width: 20px;
+  height: 20px;
+  background: #3e2723;
+  border-radius: 50%;
+  animation: floatUp 8s linear infinite;
+  opacity: 0.6;
+}
+
+.bubble1 { left: 10%; animation-delay: 0s; }
+.bubble2 { left: 30%; animation-delay: 2s; }
+.bubble3 { left: 50%; animation-delay: 4s; }
+.bubble4 { left: 70%; animation-delay: 1s; }
+.bubble5 { left: 85%; animation-delay: 3s; }
+
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6d4c41;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 100;
+}
+
+#backToTop:hover {
+  background: #5d4037;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0.6; }
+  100% { transform: translateY(-800px); opacity: 0; }
+}
+
+@keyframes floatWobble {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+#orderModal form button {
+  background: #6d4c41;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-family: 'Chewy', cursive;
+  transition: background 0.2s ease;
+}
+
+#orderModal form button:hover {
+  background: #5d4037;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  header {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .boba-gallery {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 2rem auto;
+    }
+  
+    .boba-img {
+      width: 180px;
+      height: 180px;
+      max-width: 90%;
+    }
+  }
+
+  #pricePopup {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    top: 100%;
+    transform: translate(-50%, 10px);
+  }
+
+  footer {
+    font-size: 0.9rem;
+    background: linear-gradient(120deg, #fff8f1, #ffecda, #e7faff);
+  }
+}
+
+/* Order Modal Inputs */
+#orderModal input[type="email"],
+#orderModal textarea {
+  width: 90%;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  border: 2px solid #f8d9c4;
+  background-color: #fff7f0;
+  font-family: 'Chewy', cursive;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 0.5rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+#orderModal input[type="email"]:focus,
+#orderModal textarea:focus {
+  border-color: #f48fb1;
+}
+
+#orderModal button[type="submit"] {
+  background: #a1887f;
+  color: #fff;
+  padding: 0.7rem 2rem;
+  border-radius: 2rem;
+  border: none;
+  font-family: 'Chewy', cursive;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#orderModal button[type="submit"]:hover {
+  background: #8d6e63;
+  transform: scale(1.05);
+}
