@@ -1,5 +1,3 @@
-import emailjs from '@emailjs/browser';
-
 // Show back to top button
 const backToTopBtn = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
