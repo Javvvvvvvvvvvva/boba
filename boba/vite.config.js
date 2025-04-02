@@ -1,5 +1,5 @@
 export default {
-  root: '.', // 👈 now using root directory
+  root: './boba', // 
   base: './',
   build: {
     outDir: 'dist',
