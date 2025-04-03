@@ -96,9 +96,9 @@ function hidePopup() {
 }
 
 // 🖼️ Hover image switch
-boba.addEventListener('mouseenter', () => boba.src = 'boba1.png');
-boba.addEventListener('mouseleave', () => boba.src = 'boba.png');
+boba.addEventListener('mouseenter', () => boba.src = '/boba1.png');
+boba.addEventListener('mouseleave', () => boba.src = '/boba.png');
 
-passion.addEventListener('mouseenter', () => passion.src = 'passion1.png');
-passion.addEventListener('mouseleave', () => passion.src = 'passion.png');
+passion.addEventListener('mouseenter', () => passion.src = '/passion1.png');
+passion.addEventListener('mouseleave', () => passion.src = '/passion.png');
 
