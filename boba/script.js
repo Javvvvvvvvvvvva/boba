@@ -123,4 +123,3 @@ if (window.innerWidth <= 768) {
     passionToggle = !passionToggle;
   }, 2000); // change every 3 seconds
 }
-
