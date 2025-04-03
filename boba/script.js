@@ -1,4 +1,3 @@
-
 // Loading screen
 const loadingScreen = document.getElementById('loading-screen');
 const loadingText = document.querySelector('.loading-text');
